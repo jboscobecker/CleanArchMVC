@@ -10,4 +10,20 @@
     <ProjectReference Include="..\CleanArchMVC.Domain\CleanArchMVC.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Indentity\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
 </Project>

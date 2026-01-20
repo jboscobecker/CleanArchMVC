@@ -48,6 +48,21 @@ namespace CleanArchMVC.Domain.Tests
                 .Throw<Validation.DomainExceptionValidation>()
                 .WithMessage("Invalid image name. Image name too long, maximum 250 characters");
         }
+
+        [Fact(DisplayName = "Create a Product With Null Image")]
+        public void CreateProduct_NullImage_DomainException()
+        {
+            Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 10, null);
+            action.Should()
+                .NotThrow<Validation.DomainExceptionValidation>();
+        }
+        [Fact(DisplayName = "Create a Product With Null Image, with Null reference exception")]
+        public void CreateProduct_NullImage_DomainNullReferenceException()
+        {
+            Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 10, null);
+            action.Should()
+                .NotThrow<NullReferenceException>();
+        }
         [Fact(DisplayName = "Create a Product With Invalid name.")]
         public void CreateProduct_MissingNameValue_DomainExceptionRequiredName()
         {
