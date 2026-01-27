@@ -88,7 +88,10 @@ Abra o navegador e acesse `https://localhost:5001` ou `http://localhost:5000`.
 7. Aplicando migções de banco de dados:
 ` add-migration inicial -Project CleanArchMVC.Infra.Data -StartupProject CleanArchMVC.WebUI 
 `
-
+Update 
+1. ` update-database inicial -Project CleanArchMVC.Infra.Data -StartupProject CleanArchMVC.WebUI 
+`
+Ambiente Windows  C:\CleanArchMVC.db ou D:\CleanArchMVC.db
 ## Licença
 
 Este projeto está licenciado sob a licença MIT.
