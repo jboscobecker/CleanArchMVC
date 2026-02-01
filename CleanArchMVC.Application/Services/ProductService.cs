@@ -6,7 +6,7 @@ using CleanArchMVC.Domain.Interfaces;
 
 namespace CleanArchMVC.Application.Services
 {
-    public class ProductService(IProductRepository productRepository, IMapper mapper) : IProductService
+    public class ProductService(IProductRepository productRepository, IMapper mapper) : IProductServices
     {
         private readonly IProductRepository _productRepository = productRepository;
         private readonly IMapper _mapper = mapper;
