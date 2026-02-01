@@ -22,13 +22,18 @@ namespace CleanArchMVC.Infra.Data.Repositories
            return await _context.Products.FindAsync(id);
         }
 
-        public async Task<Product> GetProductCategoryByIdAsync(int id)
+        public async Task<Product> GetProductCategoryByIdAsync(int? id)
         {
             var Product =  await _context.Products.AsNoTracking()
                                           .Include( p => p.Category) 
                                           .SingleOrDefaultAsync(c => c.Id == id);
 
             return Product;
+        }
+
+        public Task<Product> GetProductCategoryByIdAsync(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<Product>> GetProductsAsync()
@@ -43,6 +48,7 @@ namespace CleanArchMVC.Infra.Data.Repositories
             await _context.SaveChangesAsync();
             return product;
         }
+
 
         public async Task<Product> UpdateAsync(Product product)
         {

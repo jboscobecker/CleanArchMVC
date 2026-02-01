@@ -9,6 +9,8 @@ namespace CleanArchMVC.Domain.Entities
         public decimal Price { get; private set; }
         public int Stock { get; private set; } 
         public string Image { get; private set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
 
         public Product(string name, string description, decimal price, int stock, string image) => ValidateDomain(name, description, price, stock, image);
         public Product(int id, string name, string description, decimal price, int stock, string image)
@@ -38,7 +40,5 @@ namespace CleanArchMVC.Domain.Entities
             CategoryId = categotyId;
         }
 
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
     }
 }
