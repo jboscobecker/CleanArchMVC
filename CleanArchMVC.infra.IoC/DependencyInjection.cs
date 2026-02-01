@@ -21,9 +21,9 @@ namespace CleanArchMVC.infra.IoC
             b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<Domain.Interfaces.IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryServices, CategoryService>();
-            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<Application.Interfaces.IProductServices, ProductService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;

@@ -6,9 +6,9 @@ using CleanArchMVC.Domain.Interfaces;
 
 namespace CleanArchMVC.Application.Services
 {
-    public class ProductService(IProductRepository productRepository, IMapper mapper) : IProductService
+    public class ProductService(Domain.Interfaces.IProductRepository productRepository, IMapper mapper) : Interfaces.IProductServices
     {
-        private readonly IProductRepository _productRepository = productRepository;
+        private readonly Domain.Interfaces.IProductRepository _productRepository = productRepository;
         private readonly IMapper _mapper = mapper;
 
         public async Task AddAsync(ProductDTO productDto)

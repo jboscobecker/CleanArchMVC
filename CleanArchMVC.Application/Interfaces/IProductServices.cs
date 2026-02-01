@@ -2,7 +2,7 @@
 
 namespace CleanArchMVC.Application.Interfaces
 {
-    public interface IProductService
+    public interface IProductServices
     {
         Task<IEnumerable<ProductDTO>> GetProductsAsync();
         Task<ProductDTO> GetByIdAsync(int id);
