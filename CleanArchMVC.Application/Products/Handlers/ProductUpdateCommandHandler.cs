@@ -12,9 +12,10 @@ namespace CleanArchMVC.Application.Products.Handlers
 
         public async Task<Product> Handle(ProductUpdateCommand request, CancellationToken cancellationToken)
         {
-            var product = await _productRepository.GetByIdAsync(request.Id) ?? throw new ApplicationException("Product not found.");
-            product.Update(request.Name, request.Description, request.Price, request.Stock, request.Image, request.CategoryId);
-           return await _productRepository.UpdateAsync(product);            
+                product.Update(request.Name, request.Description, request.Price, request.Stock, request.Image, request.CategoryId);
+                return await _productRepository.UpdateAsync(product);
+
+            }
         }
     }
 }
